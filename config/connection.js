@@ -5,7 +5,10 @@ let sequelize;
 
 if (process.env.JAWSDB_URL) {
     sequelize = new Sequelize(process.env.JAWSDB_URL);
-} else {
+} 
+//for testing fill in the details below with JawsDB info,
+//but switch back when committing so no security issues
+else {
     sequelize = new Sequelize(
         process.env.DB_NAME,
         process.env.DB_USER,
