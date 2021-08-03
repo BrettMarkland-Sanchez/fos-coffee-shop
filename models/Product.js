@@ -18,19 +18,12 @@ Product.init(
       allowNull: false,
     },
     price: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      unique: true,
-      validate: {
-        isEmail: true,
-      },
+      type: DataTypes.DECIMAL(3, 2),
+      allowNull: false
     },
     category: {
       type: DataTypes.STRING,
       allowNull: false,
-      validate: {
-        len: [8],
-      },
     },
   }
 );
