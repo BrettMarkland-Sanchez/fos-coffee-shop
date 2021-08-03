@@ -3,15 +3,21 @@ const router = require('express').Router();
 
 // support
 const homeRoutes = require('./homeRoutes');
-const apiRoutes = require('./api');
 const userRoutes = require('./userRoutes');
-const productRoutes = require('./productRoutes');
+const menuRoutes = require('./menuRoutes');
+const loginRoutes = require('./loginRoutes');
+const signupRoutes = require('./signupRoutes');
+const favoriteRoutes = require('./favoriteRoutes');
+const checkoutRoutes = require('./checkoutRoutes');
 
 // router pathing
 router.use('/', homeRoutes);
-router.use('/api', apiRoutes);
-router.use('/userRoutes', userRoutes);
-router.use('/productRoutes', productRoutes);
+router.use('/profile', userRoutes);
+router.use('/menu', menuRoutes);
+router.use('/login', loginRoutes);
+router.use('/signup', signupRoutes);
+router.use('/favorites', favoriteRoutes);
+router.use('/checkout', checkoutRoutes);
 
 // failure return
 router.use((req, res) => {
