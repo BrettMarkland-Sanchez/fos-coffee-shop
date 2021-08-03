@@ -1,9 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
-const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
 
-class Product extends Model {
-}
+class Product extends Model {}
 
 Product.init(
   {
@@ -18,13 +16,31 @@ Product.init(
       allowNull: false,
     },
     price: {
-      type: DataTypes.DECIMAL(3, 2),
+      type: DataTypes.DECIMAL(5, 2),
       allowNull: false
     },
     category: {
       type: DataTypes.STRING,
       allowNull: false,
     },
+    type: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    description: {
+      type: DataTypes.TEXT,
+      allowNull: false,
+    },
+    imageUrl: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+  },
+  {
+    sequelize,
+    freezeTableName:true,
+    underscored:true,
+    modelName:'product',
   }
 );
 

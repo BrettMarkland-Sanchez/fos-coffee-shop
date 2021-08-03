@@ -1,4 +1,8 @@
 const User = require('./User');
 const Product = require('./Product');
 
-module.exports = { User };
+
+//db relationships go here if we add rewards, cart, etc
+
+
+module.exports = { User, Product };
