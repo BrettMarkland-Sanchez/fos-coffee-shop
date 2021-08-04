@@ -1,8 +1,8 @@
 const router = require('express').Router();
 
-router.get('/checkout', async (req, res) => {
+router.get('/profile', async (req, res) => {
   // Send the rendered Handlebars.js template back as the response
-  res.render('checkout');
+  res.render('profile');
 });
 
 module.exports = router;
