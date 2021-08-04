@@ -3,11 +3,11 @@ const router = require('express').Router();
 
 // support
 const homeRoutes = require('./homeRoutes');
-const userRoutes = require('./userRoutes');
+const userRoutes = require('./profileRoutes');
 const menuRoutes = require('./menuRoutes');
 const loginRoutes = require('./loginRoutes');
 const signupRoutes = require('./signupRoutes');
-const favoriteRoutes = require('./favoriteRoutes');
+const favoriteRoutes = require('./favoritesRoutes');
 const checkoutRoutes = require('./checkoutRoutes');
 
 // router pathing
