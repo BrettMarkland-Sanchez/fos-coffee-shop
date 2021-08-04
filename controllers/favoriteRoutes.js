@@ -1,9 +1,9 @@
 const router = require('express').Router();
 
 router.get('/', async (req, res) => {
-    res.render('checkout', { 
+    res.render('favorites', { 
     });
-
 });
+
 
 module.exports = router;
