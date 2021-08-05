@@ -39,6 +39,12 @@ User.init(
         len: [8],
       },
     },
+    rewards: {
+      type: DataTypes.DECIMAL,
+      allowNull: false,
+      primaryKey: true,
+      defaultValue: 0
+    }
   },
   {
     hooks: {
