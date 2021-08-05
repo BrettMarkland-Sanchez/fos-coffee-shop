@@ -1,20 +1,82 @@
-<div class="row justify-space-between-md">
-  <div class="login-card">
-    <h2 class="page-title">Login</h2>
-    <form class="form login-form">
-      <div class="form-group">
-        <label for="email-login">Email:</label>
-        <input class="form-input" type="text" id="email-login" />
+  <div class="row container">
+        <form class="col s12">
+
+            <div class="row">
+                <div class="input-field col l6 offset-l3 m8 offset-m2 s10 offset-s1">
+                    <h4 class="center-align">Sign in or create an account</h4>
+                </div>
+            </div>
+
+            <div class="row z-depth-3 border-radius col l6 offset-l3 m8 offset-m2 s10 offset-s1">
+
+                <div class="row">
+                    <div class="center-align">
+                        <h4>Welcome back!</h4>
+                    </div>
+                </div>
+
+                <div class="row ">
+                    <div class="input-field col l6 offset-l3 m8 offset-m2 s10 offset-s1">
+                        <input placeholder="Username or email address" id="usernameEmail" type="text" class="validate">
+                        <label for="usernameEmail"></label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-field col l6 offset-l3 m8 offset-m2 s10 offset-s1">
+                        <input placeholder="Password" id="password" type="password" class="validate">
+                        <label for="password"></label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="center-align">
+                        <a href="#">Forget your username?</a>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="center-align">
+                        <a href="#">Forget your password?</a>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="center-align">
+                        <a class="waves-effect waves-light btn" type="submit" name="action">Login!</a>
+                    </div>
+                </div>
+
+            </div>
+
+        </form>
+    </div>
+
+    <div class="row container">
+        <form class="col s12">
+
+          <div class="light-blue border-radius col l6 offset-l3 m8 offset-m2 s10 offset-s1">
+
+            <div class="row bottom-margin">
+                <div class="input-field col l6 offset-l3 m8 offset-m2 s10 offset-s1">
+                  <h4 class="center-align ">Join FOS Rewards</h4>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-field col l6 offset-l3 m8 offset-m2 s10 offset-s1">
+                  <div class="center-align marginTopNeg">Join FOS Rewards to earn free food and drinks, get free refills, pay and order with your phone, and more!</div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="center-align">
+                    <a class="waves-effect waves-light btn" type="submit" name="action">Join now</a>
+                </div>
+            </div>
+
+
+        </form>
       </div>
-      <div class="form-group">
-        <label for="password-login">Password:</label>
-        <input class="form-input" type="password" id="password-login" />
-      </div>
-      <div class="form-group">
-        <button class="btn btn-primary" type="submit">login</button>
-      </div>
-    </form>
-  </div>
-</div>
 
 <script src="./js/login.js"></script>
