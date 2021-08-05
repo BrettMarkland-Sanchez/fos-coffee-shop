@@ -4,6 +4,10 @@ html {
     color: #fff;
 }
 
+nav .row {
+    margin-bottom: 0;
+}
+
 h1 {
     margin: 0;
     padding: 14px;
@@ -27,6 +31,17 @@ nav button {
     padding: 4px;
     margin: 0;
     width: 100px;
+}
+
+#logo {
+    width: 60px;
+    height: 60px;
+    margin-left: 1em;
+}
+
+.flush {
+    margin: 0;
+    padding: 0;
 }
 
 .bottom-space {

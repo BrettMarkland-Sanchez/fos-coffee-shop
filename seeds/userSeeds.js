@@ -15,7 +15,7 @@ const userdata = [
   },
   {
     firstName:'Brett',
-    LastName:'Markland-Sanchez',
+    lastName:'Markland-Sanchez',
     email:'bms@test.com',
     password:'Atlanta23',
   },
