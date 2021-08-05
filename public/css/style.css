@@ -4,6 +4,15 @@ html {
     color: #fff;
 }
 
+footer {
+    padding: 0 1em;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: fit-content;
+    background: darkslategrey;
+}
+
 nav .row {
     margin-bottom: 0;
 }
