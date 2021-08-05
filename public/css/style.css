@@ -1,32 +1,30 @@
 html {
     background-color: #2f455c;
-    min-width: 510px;
     color: #fff;
 }
 
 footer {
     padding: 0 1em;
-    position: absolute;
+    position: fixed;
     bottom: 0;
+    left: 0;
     width: 100%;
     height: fit-content;
     background: darkslategrey;
+    text-align: center;
+}
+
+.waves-effect {
+    position: inherit;
+    margin-bottom: 2em;
+}
+
+.row .col {
+    float: none;
 }
 
 nav .row {
     margin-bottom: 0;
-}
-
-h1 {
-    margin: 0;
-    padding: 14px;
-    margin-bottom: 7px;
-    text-shadow: 0 0 10px #21d0b2;
-}
-
-.myLink {
-    color: #1dcdfe;
-    font-weight: bold;
 }
 
 nav button {
@@ -45,7 +43,26 @@ nav button {
 #logo {
     width: 60px;
     height: 60px;
-    margin-left: 1em;
+    margin-right: 5px;
+}
+
+.logo-text {
+    font-size: 40px;
+    color: #804a2d;
+    font-weight: bold;
+    letter-spacing: 5px;
+    padding-right: 0;
+}
+
+#cart {
+    width: 30px;
+    height: 30px;
+    margin-right: 1em;
+    margin-bottom: -.5em;
+}
+
+#cart-link {
+    float: right;
 }
 
 .flush {
@@ -57,10 +74,6 @@ nav button {
     margin-bottom: 1em;
 }
 
-h1 a {
-    color: #34f5c5;
-}
-
 h2 {
     margin: 0;
     padding: .25em;
@@ -68,29 +81,8 @@ h2 {
     margin-bottom: .25em;
 }
 
-post {
-    box-shadow: 0 0 20px #21d0b2;
-}
-
-post .top {
-    background-color: rgb(30, 49, 49);
-    padding: 14px;
-    box-shadow: 0 0 10px #21d0b2;
-}
-
-post h5, h6 {
-    margin: 0;
-}
-
-post h6 {
-    text-align: right;
-    margin-top: 5px;
-}
-
-post p {
-    padding: 14px;
-    box-shadow: 0 0 10px #21d0b2;
-    margin: 0;
+h4 {
+    padding-top: 1em;
 }
 
 nav {
@@ -104,7 +96,7 @@ nav p {
     font-weight: bold;
 }
 
-.tech-icon {
-    margin-bottom: -20px;
-    padding: 0;
+nav ul a {
+    padding: 0 10px;
+    font-weight: 500;
 }
