@@ -1,1 +1,102 @@
-<div>You have {{ rewards_generator }} rewards points!</div>
+<div class="row container" id="personalInfo">
+        <form class="col s12">
+
+            <div class="row">
+                <div class="input-field col l6 offset-l3 m8 offset-m2 s10 offset-s1">
+                    <h4 class="center-align">Account Information</h4>
+                </div>
+            </div>
+
+            <div class="row z-depth-3 border-radius col l6 offset-l3 m8 offset-m2 s10 offset-s1">
+
+                <div class="row">
+                    <div class="center-align">
+                        <h4>Hi Matthew!</h4>
+                    </div>
+                </div>
+
+                <div class="row ">
+                    <div class="input-field col l6 offset-l3 m8 offset-m2 s10 offset-s1">
+                        <input disabled value="Matthew" disabled type="text" class="validate infoForm">
+                        <label for="disabled"></label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-field col l6 offset-l3 m8 offset-m2 s10 offset-s1">
+                        <input disabled value="Williams" disabled type="text" class="validate infoForm">
+                        <label for="disabled"></label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-field col l6 offset-l3 m8 offset-m2 s10 offset-s1">
+                        <input disabled value="matt@gmail.com" disabled type="text" class="validate infoForm">
+                        <label for="disabled"></label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="center-align">
+                        <a class="waves-effect waves-light btn" id="edit">Edit</a>
+                        <a class="waves-effect waves-light btn" style="display: none" type="submit" name="action"
+                            id="submit">submit</a>
+                    </div>
+                </div>
+
+            </div>
+
+        </form>
+    </div>
+
+    <div class="row container" id='passwordUpdateButtonHTML'>
+        <form class="col s12">
+
+            <div class=" col l6 offset-l3 m8 offset-m2 s10 offset-s1">
+                <div class="center-align">
+                    <a class="waves-effect waves-light btn" id="editPassword">Edit password</a>
+                </div>
+            </div>
+
+        </form>
+
+    </div>
+
+    <!--hidden form shows if they click edit password -->
+
+    <div class="row container" id="passwordUpdateForm" style="display: none">
+        <form class="col s12">
+
+            <div class="row">
+                <div class="center-align">
+                    <h4>Update password</h4>
+                </div>
+            </div>
+            <div class="row z-depth-3 border-radius col l6 offset-l3 m8 offset-m2 s10 offset-s1">
+
+                <div class="row">
+                    <div class="input-field col l6 offset-l3 m8 offset-m2 s10 offset-s1">
+                        <input placeholder="New password" type="text" class="validate">
+                        <label for="password"></label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-field col l6 offset-l3 m8 offset-m2 s10 offset-s1">
+                        <input placeholder="Confirm password" type="text" class="validate">
+                        <label for="password"></label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="center-align">
+                        <a class="waves-effect waves-light btn" id="submitPassword">Submit</a>
+                        <a class="waves-effect waves-light btn" id="cancelPasswordUpdate">Cancel</a>
+                    </div>
+                </div>
+
+            </div>
+        </form>
+    </div>
+
+    <script src="./js/profile.js"></script>
