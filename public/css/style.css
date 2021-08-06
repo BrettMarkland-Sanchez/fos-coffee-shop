@@ -48,7 +48,7 @@ nav button {
 
 .logo-text {
     font-size: 40px;
-    color: #804a2d;
+    color: #995836;
     font-weight: bold;
     letter-spacing: 5px;
     padding-right: 0;
@@ -59,6 +59,25 @@ nav button {
     height: 30px;
     margin-right: 1em;
     margin-bottom: -.5em;
+}
+
+#advert {
+    height: 100vh;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url(../assets/coffee-bean-trail-text.png);
+}
+
+#action {
+    position: fixed;
+    right: 15vw;
+    bottom: 35vh;
+}
+
+@media only screen and (min-width: 867px) {
+    #advert {
+        background-size: cover;
+    }
 }
 
 #cart-link {
