@@ -1,47 +1,78 @@
-const newFormHandler = async (event) => {
-  event.preventDefault();
 
-  const name = document.querySelector('#project-name').value.trim();
-  const needed_funding = document.querySelector('#project-funding').value.trim();
-  const description = document.querySelector('#project-desc').value.trim();
+//html button that lets you edit personal info form
+myEdit = document.getElementById('edit')
+//html button that submits personal info edit form
+mySubmit = document.getElementById('submit')
 
-  if (name && needed_funding && description) {
-    const response = await fetch(`/api/projects`, {
-      method: 'POST',
-      body: JSON.stringify({ name, needed_funding, description }),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
-
-    if (response.ok) {
-      document.location.replace('/profile');
-    } else {
-      alert('Failed to create project');
+//onclick function that enabled the fields to be updated
+//normally they are set to disabled
+//this also hides the edit buttons and displays the submit button
+myEdit.onclick = () => {
+    myArray = document.getElementsByClassName("infoForm")
+    console.log(myArray)
+    for (let i = 0; i < myArray.length; i++) {
+        myArray[i].removeAttribute("disabled");
     }
-  }
-};
+    myEdit.setAttribute('style', "display: none")
+    mySubmit.removeAttribute("style")
+}
 
-const delButtonHandler = async (event) => {
-  if (event.target.hasAttribute('data-id')) {
-    const id = event.target.getAttribute('data-id');
-
-    const response = await fetch(`/api/projects/${id}`, {
-      method: 'DELETE',
-    });
-
-    if (response.ok) {
-      document.location.replace('/profile');
-    } else {
-      alert('Failed to delete project');
+//onclick function that captures new values for the personal information
+//hides the submit button and shows the edit buttons
+//We need the sequelize update function to be added to this code
+//with the corresponding function in the controllers
+mySubmit.onclick = () => {
+    myArray = document.getElementsByClassName("infoForm")
+    
+    for (let i = 0; i < myArray.length; i++) {
+        myArray[i].setAttribute("disabled", "");
     }
-  }
-};
+    myEdit.removeAttribute("style")
+    mySubmit.setAttribute('style', "display: none")
+}
 
-document
-  .querySelector('.new-project-form')
-  .addEventListener('submit', newFormHandler);
+//button on click will show the password update form
+myPasswordUpdate = document.getElementById('editPassword')
+//HTML section that has the personal info form
+//we set this to hidden when they are updating password
+personalInfo = document.getElementById('personalInfo')
+//HTML section that has the edit password button
+//we set this to hidden when they are updating password
+passwordUpdateButtonHTML = document.getElementById('passwordUpdateButtonHTML')
+//HTML section that houses the password update form
+//We display this once the password update button is clicked
+passwordUpdateForm = document.getElementById('passwordUpdateForm')
 
-document
-  .querySelector('.project-list')
-  .addEventListener('click', delButtonHandler);
+//this function hides the personal info form
+//hides the password edit button
+//displays the password update form
+//displays the submit and cancel buttons
+myPasswordUpdate.onclick = () => {
+    personalInfo.setAttribute('style', "display: none")
+    passwordUpdateButtonHTML.setAttribute('style', "display: none")
+    passwordUpdateForm.removeAttribute("style")
+}
+
+//submit button for the password update form
+submitPassword = document.getElementById('submitPassword')
+//cancel button for the password update form
+cancelPasswordUpdate = document.getElementById('cancelPasswordUpdate')
+
+//hides the password update form
+//displays the personal info update form and edit password button
+cancelPasswordUpdate.onclick = () => {
+    personalInfo.removeAttribute("style")
+    passwordUpdateButtonHTML.removeAttribute("style")
+    passwordUpdateForm.setAttribute('style', "display: none")
+}
+
+//hides the password update form
+//displays the personal info update form and edit password button
+//needs an if statement to verify the password matches in each form section
+//We need the sequelize update function to be added to this code
+//with the corresponding function in the controllers
+submitPassword.onclick = () => {
+    personalInfo.removeAttribute("style")
+    passwordUpdateButtonHTML.removeAttribute("style")
+    passwordUpdateForm.setAttribute('style', "display: none")
+}
