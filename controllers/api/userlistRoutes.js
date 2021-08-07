@@ -1,14 +1,50 @@
 const router = require("express").Router();
-const { User } = require("../../models");
+const { User, Favorite, Product } = require("../../models");
+
+
 
 //get user route for testing
 router.get("/", async (req,res) => {
   try{
-    
+    const userData = await User.findAll();
+    res.status(200).json(userData);
   } catch(err){
     res.status(500).json(err);
   }
 })
+//END GET USER
+
+//get one user
+router.get("/:id", async (req,res) => {
+  try {
+    const userData = await User.findByPk(req.params.id);
+    res.status(200).json(userData);
+  } catch(err){
+    res.status(500).json(err);
+  }
+});
+
+//get user favorites
+router.get("/favorites/:id", async (req,res) => {
+  console.log('ok');
+  try {
+
+    const userFavData = await User.findByPk(req.params.id, {
+      include: [{ model: Product }]
+    });
+
+    if(!userFavData){
+      res.status(404).json({message:'No user found'});
+      return;
+    }
+
+
+    res.status(200).json(userFavData);
+  } catch(err) {
+    res.status(500).json(err);
+  }
+})
+
 // CREATE new user
 router.post("/", async (req, res) => {
   try {
@@ -30,6 +66,7 @@ router.post("/", async (req, res) => {
     res.status(500).json(err);
   }
 });
+//END CREATE USER
 
 // Login
 router.post("/login", async (req, res) => {
@@ -69,6 +106,7 @@ router.post("/login", async (req, res) => {
     res.status(500).json(err);
   }
 });
+//END LOGIN POST
 
 // Logout
 router.post("/logout", (req, res) => {
@@ -78,6 +116,16 @@ router.post("/logout", (req, res) => {
     });
   } else {
     res.status(404).end();
+  }
+});
+//END LOGOUT POST
+
+//update user
+router.put("/", async (req,res) => {
+  if (req.session.loggedIn) {
+    const body = { ...req.body };
+    const userData = await User.findOne({ where: { id: req.session.userId } });
+    //need to add update logic
   }
 });
 
