@@ -1,9 +1,136 @@
-<div>
-    <form id="checkout">
-        <label for="payment">Your payment amount:</label>
-        <input type="number" id="payment" name="paymentamount"><br><br>
-        <input type="submit" value="Submit">
-    </form>
-</div>
+<div class="row">
+        <form class="col s12">
 
-<script src="/js/checkout.js"></script>
+            <div class="row">
+                <div class="input-field col l6 offset-l3 m8 offset-m2 s10 offset-s1">
+                    <h4 class="center-align">Secure Checkout</h4>
+                </div>
+
+                <div class="row">
+                    <div class="col s12">
+                <div class="row">
+                    <div class="center-align">
+                        <h4>My Cart</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+<!--first sections-->
+                <div class="row z-depth-3 border-radius col l6 offset-l3 m8 offset-m2 s10 offset-s1 backgroundWhite">
+
+                    <div class="row">
+                        <div class="center-align">
+                            <h4>Personal Information</h4>
+                        </div>
+                    </div>
+
+          <div class="row">
+            <div class="input-field col l4 offset-l2 m4 offset-m2 s10 offset-s1">
+              <input placeholder="First Name" id="first_name" type="text" class="validate">
+              <label for="first_name"></label>
+            </div>
+            <div class="input-field col l4 m4 s10 offset-s1">
+              <input placeholder="Last Name" id="last_name" type="text" class="validate">
+              <label for="last_name"></label>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="input-field col l4 offset-l2 m4 offset-m2 s10 offset-s1">
+              <input placeholder="Address" id="address" type="text" class="validate">
+              <label for="address"></label>
+            </div>
+            <div class="input-field col l4 m4 s10 offset-s1">
+              <input placeholder="Zip Code" id="zipcode" type="text" class="validate">
+              <label for="zipcode"></label>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="input-field col l4 offset-l2 m4 offset-m2 s10 offset-s1">
+              <input placeholder="City" id="city" type="text" class="validate">
+              <label for="city"></label>
+            </div>
+            <div class="input-field col l4 m4 s10 offset-s1">
+              <input placeholder="State" id="state" type="text" class="validate">
+              <label for="state"></label>
+            </div>
+          </div>
+          
+          <div class="row">
+            <div class="input-field col l8 offset-l2 m8 offset-m2 s10 offset-s1">
+              <input placeholder="Email" id="email" type="email" class="validate">
+              <label for="email"></label>
+            </div>
+          </div>
+<!--end of first section-->
+        </div>
+
+
+          <div class="row z-depth-3 border-radius col l6 offset-l3 m8 offset-m2 s10 offset-s1 backgroundWhite">
+
+            <div class="row">
+                <div class="center-align">
+                    <h4>Payment Information</h4>
+                </div>
+            </div>
+
+
+          <div class="row">
+            <div class="center-align">
+                <a class="waves-effect waves-light btn" id="creditCardButton">Credit card</a>
+                <a class="waves-effect waves-light btn" id="payInStoreButton">Pay in Store</a>
+            </div>
+        </div>
+
+        <div class="row" id="creditCardInput" style="display: none">
+            <div class="input-field col l8 offset-l2 m8 offset-m2 s10 offset-s1">
+              <input placeholder="Credit or Debit Card" id="card" type="text" class="validate">
+              <label for="card"></label>
+            </div>
+          </div>
+
+          <div class="row" id="creditCardInputExtras" style="display: none">
+            <div class="input-field col l4 offset-l2 m4 offset-m2 s10 offset-s1">
+              <input placeholder="Expiration Date" id="expiration" type="text" class="validate">
+              <label for="expiration"></label>
+            </div>
+            <div class="input-field col l4 m4 s10 offset-s1">
+              <input placeholder="Security Code" id="securityCode" type="text" class="validate">
+              <label for="securityCode"></label>
+            </div>
+          </div>
+
+          <div class="row" id="pmtCancelCardButton" style="display: none">
+            <div class="center-align">
+                <a class="waves-effect waves-light btn" id="creditCard">Change Payment Type</a>
+            </div>
+        </div>
+
+          <div class="row" id="payInStore" style="display: none">
+            <div class="input-field col s8 offset-s2">
+                <h5 class="center-align">Pay in Store</h5>
+            </div>
+        </div>
+
+            <div class="row" id="pmtCancelStoreButton" style="display: none">
+                <div class="center-align col s8 offset-s2">
+                    <a class="waves-effect waves-light btn" id="creditCard">Change Payment Type</a>
+                </div>
+            </div>
+
+          </div>
+          
+          <div class="row" id='marginBottomSmall'>
+            <div class="center-align col s8 offset-s2">
+                <a class="waves-effect waves-light btn-large" id="submit">Checkout</a>
+            </div>
+        </div>
+
+        </form>
+    </div>
+
+
+    <script src="./js/checkout.js"></script>
