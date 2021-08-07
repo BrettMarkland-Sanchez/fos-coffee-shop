@@ -11,14 +11,17 @@ for (item of menu) {
             let cart = sessionStorage.getItem('cart');
             cart = JSON.parse(cart);
             // IF item present in cart, increment quantity(value) -- ELSE add item(key) to cart
-            if (cart['test']) {
-                cart['test']++;
-            } else cart['test'] = 1;
+            value = item.value 
+            name = item.id
+            console.log({value, name})
+            cart.push({value, name})
             cart = JSON.stringify(cart);
             sessionStorage.setItem('cart', cart);
         } else {
-            let cart = {};
-            cart['test'] = 1;
+            let cart = [];
+            value = item.value 
+            name = item.id
+            cart.push({value}, {name});
             cart = JSON.stringify(cart);
             sessionStorage.setItem('cart', cart);
         }

@@ -1,6 +1,6 @@
 <div class="row container">
     {{#each menuItems}}
-        <div class="card">
+        <div class="card" id='{{name}}' value={{price}}>
             <div class="row">
                 <img class="center-align" src="/assets/{{ name }}.jpg">
             </div>
@@ -13,7 +13,7 @@
                 <button class="waves-effect waves-light btn-small blue add-cart">
                     Add to Cart
                 </button>
-                <button class="waves-effect waves-light btn-small orange add-favorite">
+                <button class="waves-effect waves-light btn-small orange add-favorite" id='{{name}}' value={{price}}>
                     Add Favorite
                 </button>
             </div>
