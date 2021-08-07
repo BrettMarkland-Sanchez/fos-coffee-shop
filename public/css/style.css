@@ -156,18 +156,6 @@ nav ul a {
     border-radius: 1.25rem;
 }
 
-.marginTopSmall {
-    margin-top: 10px !important;
-}
-
-#marginBottomSmall {
-    margin-bottom: 40px !important;
-}
-
-.paddingBottomSmall {
-    padding-bottom: 40px !important;
-}
-
 .wrapper {
     padding-bottom: 100px;
 }
