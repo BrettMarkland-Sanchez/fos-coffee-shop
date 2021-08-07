@@ -3,7 +3,6 @@ html {
     color: #fff;
 }
 
-
 footer {
     padding: 0 1em;
     position: fixed;
@@ -14,7 +13,6 @@ footer {
     background: darkslategrey;
     text-align: center;
 }
-
 
 .card {
     color: #2f455c;
