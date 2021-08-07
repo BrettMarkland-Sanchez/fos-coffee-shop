@@ -1,11 +1,20 @@
 const router = require("express").Router();
 const { User } = require("../../models");
 
+//get user route for testing
+router.get("/", async (req,res) => {
+  try{
+    
+  } catch(err){
+    res.status(500).json(err);
+  }
+})
 // CREATE new user
 router.post("/", async (req, res) => {
   try {
     const dbUserData = await User.create({
-      username: req.body.username,
+      firstName: req.body.firstName,
+      lastName: req.body.lastName,
       email: req.body.email,
       password: req.body.password,
     });
