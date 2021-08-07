@@ -1,4 +1,24 @@
-{{#each menuItems}}
-{{ name }}
-{{ price }}
-{{/each}}
+<div class="row container">
+    {{#each menuItems}}
+        <div class="card">
+            <div class="row">
+                <img class="center-align" src="/assets/{{ name }}.jpg">
+            </div>
+            <div class="row">
+                <div class="item-label">
+                    {{ name }} | ${{ price }}
+                </div>
+            </div>
+            <div class="row">
+                <button class="waves-effect waves-light btn-small blue add-cart">
+                    Add to Cart
+                </button>
+                <button class="waves-effect waves-light btn-small orange add-favorite">
+                    Add Favorite
+                </button>
+            </div>
+        </div>
+    {{/each}}
+</div>
+
+<script src="./js/menu.js"></script>

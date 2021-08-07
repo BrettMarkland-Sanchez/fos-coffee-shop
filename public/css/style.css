@@ -14,6 +14,31 @@ footer {
     text-align: center;
 }
 
+.card {
+    color: #2f455c;
+    height: 330px;
+    width: 300px;
+    border-radius: 3%;
+    padding: 1em;
+    margin: 1em;
+    float: left;
+    font-weight: 500;
+    align-items: center;
+}
+
+.center-align {
+    display: block;
+    margin: auto;
+}
+
+.add-cart {
+    float: left;
+}
+
+.add-favorite {
+    float: right;
+}
+
 .waves-effect {
     position: inherit;
     margin-bottom: 2em;
