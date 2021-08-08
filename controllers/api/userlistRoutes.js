@@ -1,5 +1,19 @@
+"use strict";
+const nodemailer = require("nodemailer");
+
 const router = require("express").Router();
 const { User, Favorite, Product } = require("../../models");
+
+// nodemailer sender user log in information
+const transporter = nodemailer.createTransport({
+  host: "smtp.sendgrid.net",
+  port: 587,
+  secure: false, // true for 465, false for other ports
+  auth: {
+    user: process.env.DB_NODEMAILER_USER, // generated ethereal user
+    pass: process.env.DB_NODEMAILER_PASS // generated ethereal password
+  },
+});
 
 
 
@@ -45,6 +59,8 @@ router.get("/favorites/:id", async (req,res) => {
   }
 })
 
+
+
 // CREATE new user
 router.post("/", async (req, res) => {
   try {
@@ -61,6 +77,20 @@ router.post("/", async (req, res) => {
 
       res.status(200).json(dbUserData);
     });
+
+    // nodemailer new user email message to be sent
+    let info = await transporter.sendMail({
+      from: '"Fred Foo 👻" <jason@jsonkimify.tech>', // sender address
+      to: req.body.email, // list of receivers
+      subject: "Hello ✔", // Subject line
+      text: "WELCOME TO FOS COFFEE SHOP!", // plain text body
+      html: "<b>WELCOME TO FOS COFFEE SHOP!</b>", // html body
+    });
+
+    console.log("Message sent: %s", info.messageId);
+
+    console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
+
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
