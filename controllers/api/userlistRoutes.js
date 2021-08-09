@@ -152,11 +152,23 @@ router.post("/logout", (req, res) => {
 //END LOGOUT POST
 
 //update user
-router.put("/", async (req,res) => {
+router.put("/update", async (req,res) => {
   if (req.session.loggedIn) {
     const body = { ...req.body };
     const userData = await User.findOne({ where: { id: req.session.userId } });
+    console.log("USER FOR UPDATING:", userData)
     //need to add update logic
+    console.log(body.confirmPass);
+    if (body.newPass === body.confirmPass) {
+      userData.password = body.newPass;
+      await User.update(body, { where: { id: req.session.userID } });
+      await userData.save();
+    } else {
+      res
+      .status(400)
+      .json({ message: "Confirm Password does not match New Password!" });
+    return;
+    }
   }
 });
 
