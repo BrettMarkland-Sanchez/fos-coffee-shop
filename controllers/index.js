@@ -7,7 +7,6 @@ const userRoutes = require("./profileRoutes");
 const menuRoutes = require("./menuRoutes");
 const loginRoutes = require("./loginRoutes");
 const signupRoutes = require("./signupRoutes");
-const favoriteRoutes = require("./favoritesRoutes");
 const checkoutRoutes = require("./checkoutRoutes");
 const apiRoutes = require("./api");
 
@@ -17,7 +16,6 @@ router.use("/profile", userRoutes);
 router.use("/menu", menuRoutes);
 router.use("/login", loginRoutes);
 router.use("/signup", signupRoutes);
-router.use("/favorites", favoriteRoutes);
 router.use("/checkout", checkoutRoutes);
 router.use("/api", apiRoutes);
 

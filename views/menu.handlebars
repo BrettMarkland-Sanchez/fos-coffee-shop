@@ -1,6 +1,6 @@
 <div class="row container">
     {{#each menuItems}}
-        <div class="card" id='{{name}}' value={{price}}>
+        <div class="card" id='{{name}}' data-value={{price}}>
             <div class="row">
                 <img class="center-align" src="/assets/{{ name }}.jpg">
             </div>
@@ -9,7 +9,7 @@
                     {{ name }} | ${{ price }}
                 </div>
             </div>
-            <div id="{{ id }}" class="row item-buttons">
+            <div data-name="{{ name }}" class="row item-buttons">
                 <button class="waves-effect waves-light btn-small blue add-cart">
                     Add to Cart
                 </button>
