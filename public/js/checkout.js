@@ -68,7 +68,8 @@ const buildCards = () => {
     myCard.appendChild(myRowTwo)
 
     const myItemLabel = document.createElement("div");
-    myItemLabel.className = "item-label center-align";
+    myItemLabel.className = "item-label center-align item-buttons";
+    myItemLabel.setAttribute('data-name', myCart[i].name)
     myItemLabel.innerText = `${myCart[i].name} | ${myCart[i].value}`
     myRowTwo.appendChild(myItemLabel)
 
