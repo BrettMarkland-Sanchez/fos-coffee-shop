@@ -64,7 +64,7 @@ const buildCards = () => {
     myRow.appendChild(myImg)
 
     const myRowTwo = document.createElement("div");
-    myRowTwo.className = "row";
+    myRowTwo.className = "row ";
     myCard.appendChild(myRowTwo)
 
     const myItemLabel = document.createElement("div");
@@ -72,15 +72,18 @@ const buildCards = () => {
     myItemLabel.innerText = `${myCart[i].name} | ${myCart[i].value}`
     myRowTwo.appendChild(myItemLabel)
 
+    /*
     const myRowThree = document.createElement("div");
-    myRowThree.className = "row item-buttons";
+    myRowThree.className = "row item-buttons container ";
     myRowThree.setAttribute('data-name', myCart[i].name)
     myCard.appendChild(myRowThree)
+
+    */
 
     const myRemoveButton = document.createElement("div");
     myRemoveButton.className = "waves-effect waves-light btn-small blue remove-cart center-align";
     myRemoveButton.innerText = 'Delete'
-    myRowThree.appendChild(myRemoveButton)
+    myItemLabel.appendChild(myRemoveButton)
     }
 
 }
