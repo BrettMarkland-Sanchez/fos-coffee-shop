@@ -15,6 +15,8 @@ router.get('/', async (req, res) => {
       menuItem.get({ plain: true })
     );
 
+    
+
     res.render('menu', {
       menuItems,
       loggedIn: req.session.loggedIn,

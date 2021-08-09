@@ -60,7 +60,7 @@ const buildCards = () => {
     
     const myImg = document.createElement("img");
     myImg.className = "center-align";
-    myImg.src = `/assets/${myCart[i].name}.jpg`
+    myImg.src = `/assets/${myCart[i].filename}.jpg`
     myRow.appendChild(myImg)
 
     const myRowTwo = document.createElement("div");
