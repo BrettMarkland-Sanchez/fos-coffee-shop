@@ -14,9 +14,10 @@ document.addEventListener('click', (event) => {
 
   if (element.matches('.add-cart')) {
     const name = element.closest('.item-buttons').dataset.name; // grabs the id from the parent TODO: maybe use data-attributes
-    const value = element.closest('.card').dataset.value; // TODO: maybe use data-attributes
+    const value = element.closest('.card').dataset.value;
+    const filename = element.closest('.card').dataset.filename; // TODO: maybe use data-attributes
     const cart = getCart(); // concat copies the cart array and does not modify it, prevents potential side effect
-    cart.push({value, name})
+    cart.push({value, name, filename})
     sessionStorage.setItem('cart', JSON.stringify(cart));
     renderCart(cart);
   }

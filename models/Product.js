@@ -15,6 +15,10 @@ Product.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    filename: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     price: {
       type: DataTypes.DECIMAL(5, 2),
       allowNull: false

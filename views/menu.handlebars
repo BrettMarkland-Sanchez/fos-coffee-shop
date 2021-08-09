@@ -1,8 +1,11 @@
 <div class="row container">
     {{#each menuItems}}
-        <div class="card" id='{{name}}' data-value={{price}}>
+        <div class="card" id='{{name}}' data-value={{price}} data-filename={{filename}}>
             <div class="row">
-                <img class="center-align" src="/assets/{{ name }}.jpg">
+                <img class="center-align" src="/assets/{{filename}}.jpg" >
+                <!--
+                <img class="center-align" src="/public/assets/{{name}}.jpg">
+                -->
             </div>
             <div class="row">
                 <div class="item-label">
