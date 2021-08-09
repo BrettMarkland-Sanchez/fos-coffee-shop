@@ -40,7 +40,7 @@ pmtCancelStoreButton.onclick = () => {
     creditCardButton.removeAttribute("style")
 }
 
-const createCards = () => {
+const buildCards = () => {
 
     const myCart = JSON.parse(sessionStorage.getItem('cart'))
     
@@ -81,11 +81,30 @@ const createCards = () => {
     myRemoveButton.className = "waves-effect waves-light btn-small blue remove-cart center-align";
     myRemoveButton.innerText = 'Delete'
     myRowThree.appendChild(myRemoveButton)
-    
-    }
     }
 
-    createCards()
+}
+
+const totalPayment = () => {
+    const myCart = JSON.parse(sessionStorage.getItem('cart'))
+    let priceArray = [];
+    let grandTotal = 0;
+    const myBill = document.getElementById('myBill')
+    for (let i = 0; i < myCart.length; i++) {
+        priceArray.push(parseFloat(myCart[i].value));
+        grandTotal += priceArray[i];
+    };
+    if (grandTotal) {
+        myBill.innerText = `Your Total Is: $${grandTotal.toFixed(2)}`;
+    }
+    
+};
+
+    
+
+    buildCards()
+    totalPayment()
+
     document.addEventListener('click', (event) => {
         const element = event.target;
       
@@ -105,3 +124,4 @@ const createCards = () => {
       };
     }
 )
+
