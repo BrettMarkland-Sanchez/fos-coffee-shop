@@ -14,7 +14,7 @@ else {
         process.env.DB_USER,
         process.env.DB_PASSWORD,
         {
-            host: process.env.DB_AWS_DB,
+            host: 'localhost',
             dialect: 'mysql',
             port: 3306
         }
