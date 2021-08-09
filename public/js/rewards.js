@@ -1,5 +1,5 @@
 const checkoutEl = document.querySelector("#checkoutForm");
-const userPayment = document.querySelector("#payment");
+const userPayment = document.querySelector("#paymentForRewards");
 
 checkoutEl.addEventListener("submit", async (event) => {
   event.preventDefault();
