@@ -71,8 +71,22 @@ cancelPasswordUpdate.onclick = () => {
 //needs an if statement to verify the password matches in each form section
 //We need the sequelize update function to be added to this code
 //with the corresponding function in the controllers
-submitPassword.onclick = () => {
+submitPassword.onclick = async (event) => {
+    event.preventDefault();
+    submitNewPass = document.getElementById("submitNewPass")
+    confirmNewPass = document.getElementById("confirmNewPass");
+    newPass = submitNewPass.value;
+    confirmPass = confirmNewPass.value;
+
     personalInfo.removeAttribute("style")
     passwordUpdateButtonHTML.removeAttribute("style")
     passwordUpdateForm.setAttribute('style', "display: none")
+    
+    const data = { newPass, confirmPass };
+
+    const response = await fetch("/api/users/update", {
+        method: "PUT",
+        headers: { "Content-Type": "application/JSON" },
+        body: JSON.stringify(data),
+    });
 }
