@@ -12,7 +12,7 @@ const logoutRoutes = require("./logoutRoutes");
 const apiRoutes = require("./api");
 
 // router pathing
-router.use("/", logoutRoutes);
+router.use("/logout", logoutRoutes);
 router.use("/", homeRoutes);
 router.use("/profile", userRoutes);
 router.use("/menu", menuRoutes);

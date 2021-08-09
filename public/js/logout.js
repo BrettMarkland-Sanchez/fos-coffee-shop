@@ -1,3 +1,5 @@
+
+
 const logout = async () => {
   const response = await fetch('/logout', {
     method: 'POST',
@@ -5,7 +7,7 @@ const logout = async () => {
   });
 
   if (response.ok) {
-    document.location.replace('/menu');
+    document.location.replace('/');
   } else {
     alert(response.statusText);
   }
