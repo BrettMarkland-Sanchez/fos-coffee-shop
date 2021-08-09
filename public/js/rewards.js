@@ -3,10 +3,15 @@ const userPayment = document.querySelector("#paymentForRewards");
 
 checkoutEl.addEventListener("submit", async (event) => {
   event.preventDefault();
-  console.log("click");
   // grab price and calculate rewards
   const rewards = dollarToRewards(userPayment.value);
   const data = { rewards };
+
+  let cart = JSON.parse(sessionStorage.getItem('cart'))
+  cart = []
+  sessionStorage.setItem('cart', JSON.stringify(cart));
+  location.reload()
+
   // set up a fetch request to PUT aka update rewards, passing data to the server
   const response = await fetch("/api/users/rewards", {
     method: "PUT",

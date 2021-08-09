@@ -116,9 +116,7 @@ const totalPayment = () => {
           for (let i = 0; i < cart.length; i++) {
             if (cart[i].name === name) {
                 cart.splice([i], 1)
-                console.log(JSON.parse(sessionStorage.getItem('cart')))
                 sessionStorage.setItem('cart', JSON.stringify(cart));
-                console.log(JSON.parse(sessionStorage.getItem('cart')))
                 location.reload()
                 return
             }
