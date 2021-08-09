@@ -1,7 +1,6 @@
 const router = require("express").Router();
 
 router.post('/', (req, res) => {
-    console.log(req.session, '------------------------------------------')
 
     if (req.session.loggedIn) {
       req.session.destroy(() => {
@@ -12,4 +11,5 @@ router.post('/', (req, res) => {
     }
  });
 
+  
   module.exports = router;
