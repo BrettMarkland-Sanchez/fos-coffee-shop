@@ -1,38 +1,30 @@
-// Save data to sessionStorage for cart contents
-// Add the item and favorite button nodes on the menu page each to an array
-let menu = document.getElementsByClassName('add-cart');
-let favorites = document.getElementsByClassName('add-favorite');
-
-// Loop through each item in menu to add listeners for adding to cart object
-for (item of menu) {
-    item.onclick = function () {
-        // IF cart exists, add to it -- ELSE create new cart then add to it
-        if (sessionStorage.getItem('cart')) {
-            let cart = sessionStorage.getItem('cart');
-            cart = JSON.parse(cart);
-            // IF item present in cart, increment quantity(value) -- ELSE add item(key) to cart
-            value = item.value 
-            name = item.id
-            console.log({value, name})
-            cart.push({value, name})
-            cart = JSON.stringify(cart);
-            sessionStorage.setItem('cart', cart);
-        } else {
-            let cart = [];
-            value = item.value 
-            name = item.id
-            cart.push({value}, {name});
-            cart = JSON.stringify(cart);
-            sessionStorage.setItem('cart', cart);
-        }
+// Always gets the cart from sessionStorage or returns an empty array if null
+const getCart = () => {
+    return JSON.parse(sessionStorage.getItem('cart')) || [];
+  };
+  
+  // Function to update the HTML within the cart
+  const renderCart = (cartData) => {
+    // Update contents of cart using `cartData`
+  };
+  
+  // Event delegation to handle both click events in one listener
+  document.addEventListener('click', (event) => {
+    const element = event.target;
+  
+    if (element.matches('.add-cart')) {
+      const name = element.closest('.item-buttons').dataset.name; // grabs the id from the parent TODO: maybe use data-attributes
+      const value = element.closest('.card').dataset.value; // TODO: maybe use data-attributes
+      console.log(value);
+      const cart = getCart().concat({value, name}); // concat copies the cart array and does not modify it, prevents potential side effect
+      sessionStorage.setItem('cart', JSON.stringify(cart));
+      renderCart(cart);
     }
-}
-
-// Loop through each item in favorites to add listeners for adding to favorites table
-// Testing shows id in window alert for now
-for (item of favorites) {
-    let productId = item.parentNode.id;
-    item.onclick = function (productId) {
-        alert(`favorite item id: ${productId}`)
+  
+    if (element.matches('.add-favorite')) {
+      const id = element.closest('.item-buttons').id; // TODO: maybe use data-attributes
+      console.log(`favorite item id: ${id}`); 
     }
-}
+  });
+  
+  renderCart(getCart());
