@@ -70,7 +70,7 @@ const buildCards = () => {
     const myItemLabel = document.createElement("div");
     myItemLabel.className = "item-label center-align item-buttons";
     myItemLabel.setAttribute('data-name', myCart[i].name)
-    myItemLabel.innerText = `${myCart[i].name} | ${myCart[i].value}`
+    myItemLabel.innerText = `${myCart[i].name} | $${myCart[i].value}`
     myRowTwo.appendChild(myItemLabel)
 
     /*
@@ -82,7 +82,8 @@ const buildCards = () => {
     */
 
     const myRemoveButton = document.createElement("div");
-    myRemoveButton.className = "waves-effect waves-light btn-small blue remove-cart center-align";
+    myRemoveButton.className = "waves-effect waves-light btn-small blue remove-cart center-align container";
+    myRemoveButton.style.marginTop = '1em';
     myRemoveButton.innerText = 'Delete'
     myItemLabel.appendChild(myRemoveButton)
     }
