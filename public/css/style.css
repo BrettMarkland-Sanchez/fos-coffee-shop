@@ -169,3 +169,7 @@ nav ul a {
 .wrapper {
     padding-bottom: 100px;
 }
+
+#bigger-font {
+    font-size: 25px;
+}
