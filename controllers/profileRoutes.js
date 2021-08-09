@@ -6,11 +6,13 @@ router.get('/', async (req, res) => {
   try {
     console.log("Does it work?")
     const dbUserData = await User.findOne({ where: { id: req.session.userId} });
-    console.log(dbUserData)
-    console.log("Does it work?")
-    res.render('profile')
-    console.log("Does it work?")
     
+    console.log("Current Rewards Are:", dbUserData.rewards);
+    console.log("Current Name is:", dbUserData.firstName);
+    res.render('profile', {
+      dbUserData,
+      loggedIn: req.session.loggedIn
+    });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
