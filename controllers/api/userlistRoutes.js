@@ -84,7 +84,7 @@ router.post("/", async (req, res) => {
       to: req.body.email, // list of receivers
       subject: "Hello ✔", // Subject line
       text: "WELCOME TO FOS COFFEE SHOP!", // plain text body
-      html: "<b>WELCOME TO FOS COFFEE SHOP!</b>", // html body
+      html: "<b>THANK YOU FOR SIGNING UP, WE APPRECIATE YOUR BUSINESS!</b>", // html body
     });
 
     console.log("Message sent: %s", info.messageId);
@@ -111,6 +111,7 @@ router.post("/login", async (req, res) => {
       res
         .status(400)
         .json({ message: "Incorrect email or password. Please try again!" });
+      console.log("PLEASE ENTER AN EMAIL AND PASSWORD");
       return;
     }
 

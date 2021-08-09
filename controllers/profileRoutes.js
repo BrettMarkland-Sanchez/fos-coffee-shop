@@ -9,10 +9,14 @@ router.get('/', async (req, res) => {
     
     console.log("Current Rewards Are:", dbUserData.rewards);
     console.log("Current Name is:", dbUserData.firstName);
-    res.render('profile', {
-      dbUserData,
-      loggedIn: req.session.loggedIn
-    });
+    if (dbUserData) {
+      res.render('profile', {
+        dbUserData,
+        loggedIn: req.session.loggedIn
+      });
+    } else {
+      res.render('login');
+    }
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
