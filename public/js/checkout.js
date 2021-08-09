@@ -43,6 +43,7 @@ pmtCancelStoreButton.onclick = () => {
 const totalPayment = () => {
     const myCart = JSON.parse(sessionStorage.getItem('cart'))
     let showGrandTotal = document.getElementById('paymentTotalDisplayed');
+    let paymentToRewards = document.getElementById('paymentTotalForRewards');
     let priceArray = [];
     let grandTotal = 0;
 
@@ -52,6 +53,7 @@ const totalPayment = () => {
     };
     
     showGrandTotal.innerText = "Your Total Is: $" + grandTotal.toFixed(2);
+    paymentToRewards.value = grandTotal.toFixed(2);
 };
 
 totalPayment();
