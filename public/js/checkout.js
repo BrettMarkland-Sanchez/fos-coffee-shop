@@ -90,12 +90,14 @@ const totalPayment = () => {
     let priceArray = [];
     let grandTotal = 0;
     const myBill = document.getElementById('myBill')
+    const paymentForRewards = document.getElementById('paymentForRewards')
     for (let i = 0; i < myCart.length; i++) {
         priceArray.push(parseFloat(myCart[i].value));
         grandTotal += priceArray[i];
     };
     if (grandTotal) {
         myBill.innerText = `Your Total Is: $${grandTotal.toFixed(2)}`;
+        paymentForRewards.value = grandTotal.toFixed(2);
     }
     
 };
