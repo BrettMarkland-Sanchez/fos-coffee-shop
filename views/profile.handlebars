@@ -1,4 +1,5 @@
 <div class="row container" id="personalInfo">
+    {{#each dbUserData}}
         <form class="col s12" id="checkoutForm">
 
             <div class="row">
@@ -11,27 +12,28 @@
 
                 <div class="row">
                     <div class="center-align">
-                        <h4>Hi Matthew!</h4>
+                        <h4>Hi {{ firstName }}!</h4>
+                        <h3>You currently have {{ rewards }} points.</h3>
                     </div>
                 </div>
 
                 <div class="row ">
                     <div class="input-field col l6 offset-l3 m8 offset-m2 s10 offset-s1">
-                        <input disabled value="Matthew" disabled type="text" class="validate infoForm">
+                        <input disabled value={{ firstName }} disabled type="text" class="validate infoForm">
                         <label for="disabled"></label>
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="input-field col l6 offset-l3 m8 offset-m2 s10 offset-s1">
-                        <input disabled value="Williams" disabled type="text" class="validate infoForm">
+                        <input disabled value={{ lastName }} disabled type="text" class="validate infoForm">
                         <label for="disabled"></label>
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="input-field col l6 offset-l3 m8 offset-m2 s10 offset-s1">
-                        <input disabled value="matt@gmail.com" disabled type="text" class="validate infoForm">
+                        <input disabled value={{ email }} disabled type="text" class="validate infoForm">
                         <label for="disabled"></label>
                     </div>
                 </div>
@@ -108,6 +110,7 @@
 
             </div>
         </form>
+        {{/each}}
     </div>
 
 
