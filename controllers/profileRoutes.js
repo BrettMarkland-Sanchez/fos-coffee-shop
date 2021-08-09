@@ -10,12 +10,12 @@ router.get('/', async (req, res) => {
       console.log("NO USER FOUND")
       res.render('login');
     } else {
-      const dbUserData = await User.findOne({ where: { id: req.session.userId} });
+      const dbUserData = await User.findByPk(req.session.userId);
 
-      console.log("Current Rewards Are:", dbUserData.rewards);
-      console.log("Current Name is:", dbUserData.firstName);
+      const user = dbUserData.get({ plain: true });
+
       res.render('profile', {
-        dbUserData,
+        ...user,
         loggedIn: req.session.loggedIn
       });
     };
