@@ -45,7 +45,6 @@ const createCards = () => {
     const myCart = JSON.parse(sessionStorage.getItem('cart'))
     
     for (let i = 0; i < myCart.length; i++) {
-        console.log(myCart[i])
     
     const myHolding = document.getElementById('myHolding')
     
@@ -87,3 +86,22 @@ const createCards = () => {
     }
 
     createCards()
+    document.addEventListener('click', (event) => {
+        const element = event.target;
+      
+        if (element.matches('.remove-cart')) {
+          const name = element.closest('.item-buttons').dataset.name; 
+          const cart = JSON.parse(sessionStorage.getItem('cart'))
+          for (let i = 0; i < cart.length; i++) {
+            if (cart[i].name === name) {
+                cart.splice([i], 1)
+                console.log(JSON.parse(sessionStorage.getItem('cart')))
+                sessionStorage.setItem('cart', JSON.stringify(cart));
+                console.log(JSON.parse(sessionStorage.getItem('cart')))
+                location.reload()
+                return
+            }
+          }
+      };
+    }
+)
