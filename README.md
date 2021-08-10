@@ -43,7 +43,7 @@ The deployed application can be found here: http://fos-coffee-shop.herokuapp.com
   No pre-defined tests are included with this project.
   ## License
   
-    Copyright © Brett Markland-Sanchez. All rights reserved.
+    Copyright © Team Fortress of Solitude. All rights reserved.
 
     Licensed under the MIT license.
 
