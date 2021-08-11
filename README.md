@@ -16,7 +16,7 @@
 ![image](https://user-images.githubusercontent.com/78565748/128787427-38da7716-08b7-4dd1-a1fc-81c78440cff6.png)
 
 
-The deployed application can be found here: http://fos-coffee-shop.herokuapp.com/
+The deployed application can be found here: https://fos-coffee-shop.herokuapp.com/
 
 
   ## Table of Contents
